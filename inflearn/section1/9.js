@@ -18,7 +18,7 @@ function solution2 (s) {
     let answer = "";
     
     for(let x of s){
-        if( x == 'A') answer += '#';
+        if(x == 'A') answer += '#';
         else answer += x;
     }
 
