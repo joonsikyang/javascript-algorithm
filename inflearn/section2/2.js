@@ -23,7 +23,7 @@ function solution(heightsOfStudents) {
 console.log(solution([130, 135, 148, 140, 145, 150, 150, 153]));
 
 // 문제 풀이 >>> 확인 필요
-function solution(arr){         
+function solution2(arr) {         
     let answer = 1, max = arr[0];
     for(let i = 1; i < arr.length; i++){
         if(arr[i] > max){

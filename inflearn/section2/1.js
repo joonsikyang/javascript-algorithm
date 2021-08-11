@@ -21,7 +21,7 @@ function solution(num, numbers) {
 console.log(solution(6, [7, 3, 9, 5, 6, 12]));
 
 // 문제 풀이 >>> 확인 필요
-function solution(arr){         
+function solution2(arr){         
     let answer = [];
     answer.push(arr[0]);
     for(let i = 1; i < arr.length; i++){
