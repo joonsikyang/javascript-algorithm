@@ -14,18 +14,18 @@
 function solution(data) {
     const playerA = data[0];
     const playerB = data[1];
-    const result = [];
+    const result = []; // 강의 자료와는 다르게 출력 데이터 타입을 배열로 설정함
 
-    for(let i in playerA) {
-        if(playerA[i] === playerB[i]) {
+    for(let i in playerA) { // A, B 비교해야 하는 index는 동일. 기준을 잡으면 됨.
+        if(playerA[i] === playerB[i]) { // 비기는 경우
             result.push("D");
-        } else if(
-            playerA[i] === 1 && playerB[i] === 3
-            || playerA[i] === 2 && playerB[i] === 1
-            || playerA[i] === 3 && playerB[i] === 2
+        } else if( // A가 이기는 경우
+            playerA[i] === 1 && playerB[i] === 3 ||
+            playerA[i] === 2 && playerB[i] === 1 ||
+            playerA[i] === 3 && playerB[i] === 2
         ) {
             result.push("A");
-        } else {
+        } else { // A가 지는 경우
             result.push("B");
         }
     }
@@ -38,6 +38,7 @@ console.log(solution([[2, 3, 3, 1, 3], [1, 1, 2, 2, 3]]));
 // 문제 풀이 >> 별로..
 function solution2(a, b) {         
     let answer = "";
+    
     for(let i = 0; i < a.length; i++){
         if(a[i] === b[i]) answer += "D ";
         else if(a[i] === 1 && b[i] === 3) answer += "A ";

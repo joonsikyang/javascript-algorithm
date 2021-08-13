@@ -10,6 +10,7 @@
  * 입력 예제 : 130 135 148 140 145 150 150 153 >>> 5
  */
 
+// 1차 >>> 문제 잘못 이해..
 function solution(heightsOfStudents) {
     let answer = 0;
 
@@ -22,14 +23,19 @@ function solution(heightsOfStudents) {
 
 console.log(solution([130, 135, 148, 140, 145, 150, 150, 153]));
 
-// 문제 풀이 >>> 확인 필요
-function solution2(arr) {         
-    let answer = 1, max = arr[0];
-    for(let i = 1; i < arr.length; i++){
-        if(arr[i] > max){
+// 2차
+function solution2(heightsOfStudents) {
+    let answer = 1; // 첫 번째 학생은 무조건 보임
+    let tallest = heightsOfStudents[0];  
+
+    for(let i = 1; i < heightsOfStudents.length; i++) {
+        if (heightsOfStudents[i] > tallest) {
             answer++;
-            max = arr[i];
+            tallest = heightsOfStudents[i];
         }
     }
+
     return answer;
 }
+
+console.log(solution2([130, 135, 148, 140, 145, 150, 150, 153]));

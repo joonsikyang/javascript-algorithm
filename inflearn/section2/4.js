@@ -15,7 +15,7 @@
  * 입력 예제 : 10, [1, 0, 1, 1, 1, 0, 0, 1, 1, 0] >>> 10
  */
 
-// 1차
+// 1차 >> 보완 필요
 function solution(results) {
     let total = 0;
     let inArow = 0;
@@ -37,19 +37,19 @@ function solution(results) {
 
 // 2차
 function solution2(results) {
-    let total = 0;
+    let totalScore = 0;
     let inArow = 0;
 
     for (let x of results) {
-        if (x === 1) {
+        if (x === 1) { // 정답인 경우
             inArow++;
-            total += inArow;
-        } else {
+            totalScore += inArow;
+        } else { // 정답이 아닌 경우
             inArow = 0;
         }
     }
 
-    return total;
+    return totalScore;
 }
 
 console.log(solution2([1, 0, 1, 1, 1, 0, 0, 1, 1, 0]));
@@ -63,7 +63,7 @@ function solution3(arr) {
             answer += cnt;
         }
 
-        else cnt=0;
+        else cnt = 0;
     }
        
     return answer;
