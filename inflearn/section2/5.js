@@ -29,7 +29,8 @@ function solution(grades) {
 
     console.log("gradesOrdered >>> ", gradesOrdered);
 
-    // 기존 배열과 비교하여 index로 요소를 지정 >>> 동일 점수...
+    // 기존 배열과 비교하여 index로 요소를 지정
+    // 동일 점수...
     for(let x of grades) {
         for(let i in gradesOrdered) {
             if (x === gradesOrdered[i]) {
