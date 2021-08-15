@@ -44,16 +44,26 @@
 
 function solution(arr) {
     let answer = []
-
     for(let i in arr) {
         let bigger = 0;
         for(let j in arr) {
             if (arr[i] < arr[j]) bigger++;
         }
-        answer.push(bigger + 1);
+        answer.push(bigger + 1); // 본인보다 점수가 높은 사람이 한 명이면 본인은 2등
     }
-
     return answer;
 }
 
 console.log(solution([89, 89, 92, 100, 76]));
+
+// 문제 풀이 >> 확인 필요
+function solution(arr){  
+    let n = arr.length;
+    let answer = Array.from({length:n}, () => 1);
+    for(let i = 0; i < n; i++){
+        for(let j = 0; j < n; j++){
+            if(arr[j] > arr[i]) answer[i]++;
+        }
+    }             
+    return answer;
+}
