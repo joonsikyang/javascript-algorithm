@@ -48,7 +48,7 @@ function solution(arr) {
 const input = [[10, 13, 10, 12, 15], [12, 39, 30, 23, 11], [11, 25, 50, 53, 15], [19, 27, 29, 37, 27], [19, 13, 30, 13, 19]];
 console.log(solution(input)); // 155
 
-// 문제 풀이
+// 문제 풀이 >> 확인 필요
 function solution2(arr){  
     let answer = Number.MIN_SAFE_INTEGER;
     let n = arr.length;
@@ -62,7 +62,7 @@ function solution2(arr){
         answer = Math.max(answer, sum1, sum2);
     }
     sum1 = sum2 = 0;
-    for(let i = 0; i < n; i++){
+    for(let i = 0; i < n; i++) {
         sum1 += arr[i][i];
         sum2 += arr[i][n-i-1];
     }
