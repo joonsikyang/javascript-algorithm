@@ -10,36 +10,50 @@
  * 입력 예제 : [87, 89, 92, 100, 76] >>> [4, 3, 2, 1, 5]
  */
 
-function solution(grades) {
-    let answer = [];
+// function solution(grades) {
+//     let answer = [];
 
-    // 큰 순서대로 정렬
-    let gradesOrdered = [grades[0]];
+//     // 큰 순서대로 정렬
+//     let gradesOrdered = [grades[0]];
     
-    for (let i = 1; i < grades.length; i++) {
-        for (let j = 0; j < gradesOrdered.length; j++) {
-            if(grades[i] < gradesOrdered[gradesOrdered.length - 1]) {
-                gradesOrdered.push(grades[i])
-            } else if (grades[i] > gradesOrdered[j]) {
-                gradesOrdered.splice(j, 0, grades[i]);
-                break; // why necessary?
-            }
-        }
-    }
+//     for (let i = 1; i < grades.length; i++) {
+//         for (let j = 0; j < gradesOrdered.length; j++) {
+//             if(grades[i] < gradesOrdered[gradesOrdered.length - 1]) {
+//                 gradesOrdered.push(grades[i])
+//             } else if (grades[i] > gradesOrdered[j]) {
+//                 gradesOrdered.splice(j, 0, grades[i]);
+//                 break; // why necessary?
+//             }
+//         }
+//     }
 
-    console.log("gradesOrdered >>> ", gradesOrdered);
+//     console.log("gradesOrdered >>> ", gradesOrdered);
 
-    // 기존 배열과 비교하여 index로 요소를 지정
-    // 동일 점수...
-    for(let x of grades) {
-        for(let i in gradesOrdered) {
-            if (x === gradesOrdered[i]) {
-                answer.push(+i + 1);
-            }
+//     // 기존 배열과 비교하여 index로 요소를 지정
+//     // 동일 점수...
+//     for(let x of grades) {
+//         for(let i in gradesOrdered) {
+//             if (x === gradesOrdered[i]) {
+//                 answer.push(+i + 1);
+//             }
+//         }
+//     }
+
+//     return answer;
+// }
+
+function solution(arr) {
+    let answer = []
+
+    for(let i in arr) {
+        let bigger = 0;
+        for(let j in arr) {
+            if (arr[i] < arr[j]) bigger++;
         }
+        answer.push(bigger + 1);
     }
 
     return answer;
 }
 
-console.log(solution([87, 89, 92, 100, 76]));
+console.log(solution([89, 89, 92, 100, 76]));
