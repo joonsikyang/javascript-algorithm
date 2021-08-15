@@ -22,8 +22,8 @@ function solution(s) {
     let answer = "YES";
     s = s.toLowerCase();
     let len = s.length;
-    for(let i = 0; i < Math.floor(len/2); i++){ // 꼭 내림을 할 필요가 있나? 어짜피 작은데.
+    for(let i = 0; i < Math.floor(len / 2); i++) { // 꼭 내림을 할 필요가 있나? 어짜피 작은데.
         if(s[i]!= s[len - i - 1]) return "NO";
     }
-    return answer;
+   return answer;
 }
