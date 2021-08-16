@@ -28,11 +28,19 @@ function solution(str) {
     return answer;
 }
 
+function solution2(str) {
+    let answer = 'YES';
+    str = str.toUpperCase().replace(/[^a-zA-Z]/g,""); 
+    const reversedStr = str.split('').reverse().join('');
+    if (str !== reversedStr) answer = 'NO'
+    return answer;
+}
+
 let str = "found7, time: study; Yduts; emit, 7Dnuof"; // "foundDnuof" 10 , 0-9 
-console.log(solution(str));
+console.log(solution2(str));
 
 // 문제 풀이
-function solution2(s) {
+function solution3(s) {
     let answer = "YES";
     s = s.toLowerCase().replace(/[^a-z]/g, '');
     if(s.split('').reverse().join('') !== s) return "NO";
