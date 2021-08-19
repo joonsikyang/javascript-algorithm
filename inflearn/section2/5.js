@@ -27,7 +27,7 @@ console.log(solution([89, 89, 92, 100, 76]));
 // 문제 풀이 >> 확인 필요
 function solution2(arr) {  
     let n = arr.length;
-    let answer = Array.from({length:n}, () => 1);
+    let answer = Array.from({length: n}, () => 1); // 1차원 배열 1로 초기화. Array.from 학습 필요
     for(let i = 0; i < n; i++){
         for(let j = 0; j < n; j++){
             if(arr[j] > arr[i]) answer[i]++;

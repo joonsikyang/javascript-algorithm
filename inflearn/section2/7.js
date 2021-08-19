@@ -45,13 +45,13 @@ function solution2(arr) {
     let dx = [-1, 0, 1, 0];
     let dy = [0, 1, 0, -1];
     
-    for(let i = 0; i < n; i++) {
+    for(let i = 0; i < n; i++) { // 2차원 배열 >>> 이중 for문 활용
         for(let j = 0; j < n; j++){
             let flag = 1;
             for(let k = 0; k < 4; k++){
-                let nx = i + dx[k];
-                let ny = j + dy[k];
-                if(nx >= 0 && nx < n && ny >= 0 && ny<n && arr[nx][ny] >= arr[i][j]){
+                let nx = i + dx[k]; // 가고자 하는 행 좌표
+                let ny = j + dy[k]; // 가고자 하는 열 좌표
+                if(nx >= 0 && nx < n && ny >= 0 && ny < n && arr[nx][ny] >= arr[i][j]){
                     flag = 0;
                     break;
                 }

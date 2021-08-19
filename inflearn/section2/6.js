@@ -30,9 +30,10 @@ function solution(arr) {
 
     // 두 대각선의 합
     let firstDiagnolSum = 0, SecondDiagnolSum = 0;
-    for (let i = 0; i < arr.length; i++){
+    let n = arr.length;
+    for (let i = 0; i < n; i++){
         firstDiagnolSum += arr[i][i];
-        SecondDiagnolSum += arr[i][arr.length -1 - i];
+        SecondDiagnolSum += arr[i][n -1 - i];
     }
     sums.push(firstDiagnolSum, SecondDiagnolSum);
 
@@ -50,22 +51,27 @@ console.log(solution(input)); // 155
 
 // 문제 풀이 >> 확인 필요
 function solution2(arr){  
-    let answer = Number.MIN_SAFE_INTEGER;
+    let answer = Number.MIN_SAFE_INTEGER; // 정수 중 가장 작은 숫자로 초기화
     let n = arr.length;
     let sum1 = sum2 = 0;
+    
+     // 행의 합과 열의 합
     for(let i = 0; i < n; i++) {
-        sum1 = sum2 = 0;
+        sum1 = sum2 = 0; // 행, 열이 바뀔때마다 초기화 해줘야 함
         for(let j = 0; j < n; j++) {
-            sum1 += arr[i][j];
-            sum2 += arr[j][i];
+            sum1 += arr[i][j]; // 행의 합
+            sum2 += arr[j][i]; // 열의 합
         }
         answer = Math.max(answer, sum1, sum2);
     }
+
+    // 대각선의 합
     sum1 = sum2 = 0;
     for(let i = 0; i < n; i++) {
         sum1 += arr[i][i];
-        sum2 += arr[i][n-i-1];
+        sum2 += arr[i][n - i -1];
     }
     answer = Math.max(answer, sum1, sum2); 
+    
     return answer;
 }
