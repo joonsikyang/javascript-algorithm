@@ -7,21 +7,59 @@
  * 입력 예제 : "teachermode", "e" >>> 10121012210
  */
 
+// Math.abs() 활용
 function solution(str, char) {
     let answer = [];
-    let strArr = str.split("");
-    for (let i in strArr) {
-        // 문자열과 동일한 경우 >>> 0
-        if(strArr[i] === char) answer.push(0);
 
-        // 문자열과 동일하지 않은 경우 >>> index 값의 차이 (최소값)
+    // 해당 문자의 index로 구성된 배열 생성
+    let idxArr = [];
+    for (let i in str) {
+        if(str[i] === char) idxArr.push(+i);
     }
 
-    return answer.join('')
+    // 이중 for 문 >>> 시간 복잡도(O(n^2))
+    for (let i in str){
+        let smallest = Math.abs(i - idxArr[0]);
+        for (let j = 1; j < idxArr.length; j++) {
+            let val = Math.abs(i - idxArr[j]);
+            if(val < smallest) smallest = val;
+        }
+        answer.push(smallest);
+    }
+
+    return answer;
+
 }
 
-// 주어진 문자의 index를 구해서 a / b / c
-// 특정 문자 index 와의 차이값 중 최소값
+console.log(solution("teachermode", "e"));
 
+// 문제 풀이 >>> 시간 복잡도 O(n)
+// 이런 방법을 어떻게 생각하지...
+function solution2(s, t){
+    let answer = [];
+    
+    // 왼쪽에서 오른쪽으로
+    let p = 1000; // 임의의 변수, 큰 값으로 지정 >> 나중에는 결국 최소값을 구하면 됨
+    for(let x of s){
+        if(x === t){
+            p = 0;
+            answer.push(p);
+        }
+        else{
+            p++;
+            answer.push(p);
+        }
+    }
 
-console.log(solution("teachermode", "e")); 
+    // 오른쪽에서 왼쪽으로
+    p = 1000;
+    for(let i = s.length - 1; i >= 0; i--){
+        if(s[i] === t) p = 0;
+        else {
+            p++;
+            answer[i] = Math.min(answer[i], p); // 배열을 두개 만들어서 비교하는 것이 아니라 최소값으로 값을 바로 교체
+        }
+    }
+
+    return answer;
+}

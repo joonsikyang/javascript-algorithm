@@ -6,9 +6,10 @@
  * 단 회문을 검사할 때 대소문자를 구분하지 않습니다.
  */
 
+// 방법 1)
 function solution(str){
     let answer = 'YES';
-    let upperCaseStr = str.toUpperCase();
+    let upperCaseStr = str.toUpperCase(); // 변수명... 
     for(let i = 0; i < (str.length / 2); i++) {
         if(upperCaseStr[i] !== upperCaseStr[str.length - i - 1]) answer = 'NO';
     }
@@ -16,6 +17,10 @@ function solution(str){
 }
 
 console.log(solution("baaB")); // YES
+
+// 방법 2) reverse method 사용
+// if(s.split('').reverse() !== s.split('')) answer = "NO"
+// if(s.split('').reverse().join('') !== s) answer = "NO"
 
 // 문제 풀이
 function solution(s) {

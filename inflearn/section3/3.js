@@ -7,20 +7,29 @@
  * 입력 예제 : g0en2T0s8eSoft >>> 208
  */
 
+// string to number / number to string
 function solution(str) {
     return +str.replace(/[a-zA-Z]/g, "");
 }
 
 let str = "g0en2T0s8eSoft";
+console.log(typeof solution(str));
 console.log(solution(str));
 
-// 문제 풀이
+// 문제 풀이 1) parseInt 활용
 function solution2(str) {
     let answer = "";
-    
     for(let x of str){
         if(!isNaN(x)) answer += x;
-    }  
-    
+    }
     return parseInt(answer);
+}
+
+// 문제 풀이 2) 
+function solution3(str) {
+    let answer = 0;
+    for(let x of str){
+        if(!isNaN(x)) answer = answer * 10 + Number(x)
+    }
+    return answer;
 }

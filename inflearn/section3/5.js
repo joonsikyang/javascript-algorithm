@@ -9,6 +9,7 @@
  * 입력 예제 : KKHSSSSSSSE >>> K2HS7E
  */
 
+// 첫 번째, (지저분)
 function solution(str) {
     let answer = str[0];
     let count = 1;
@@ -26,14 +27,33 @@ function solution(str) {
     return answer;
 }
 
-console.log(solution("KKHSSSSSSSE"));
+// 두 번째,
+function solution2(str) {
+    let answer = '';
+    let count = 1;
+    str = str + " ";
+
+    for(let i = 0; i < str.length -1; i++){
+        if(str[i] === str[i + 1]) { // for in 문 사용하면 i + 1 못 읽나..?
+            count++;
+        } else {
+            answer += str[i];
+            if(count > 1) answer += count; // 자동 타입 변환
+            count = 1;
+        }
+    }
+
+    return answer;
+}
+
+console.log(solution2("KKHSSSSSSSEE"));
 
 // 문제 풀이
-function solution2(s) {
+function solution3(s) {
     let answer = "";
     let cnt = 1;
-    s = s + " ";
-    for(let i = 0; i < s.length - 1; i++) {
+    s = s + " "; // 띄어쓰기 문자 두는 이유는..? 마지막 문자까지 확인하기 위해
+    for(let i = 0; i < s.length - 1; i++) { // 마지막 띄어쓰기 문자가 있기 때문에 len - 1 까지
         if(s[i] === s[i+1]) cnt++;
         else {
             answer += s[i];

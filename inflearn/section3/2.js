@@ -9,28 +9,24 @@
  * 입력 예제 : found7, time: study; Yduts; emit, 7Dnuof >>> "YES"
  */
 
-// reverse 메소드 사용해서 다시 풀어보기
-// 정규 표현식 학습
+// 정규 표현식, Array.reverse() 
 function solution(str) {
     let answer = 'YES';
-
     // 알파벳이 아닌 것은 제외 >> 정규표현식
-    let alphabetsOnly = str.replace(/[^a-zA-Z]/g,""); 
-
+    const alphabetsOnly = str.replace(/[^a-zA-Z]/g,""); // 대소문자 통일을 먼저 해주면 정규식 단축 가능(아래 방법 참고)
     // 대소문자 통일
-    let strToUpperCase = alphabetsOnly.toUpperCase();
-
+    const strToUpperCase = alphabetsOnly.toUpperCase();
     // 대칭되는 문자열 비교
-    for(let i = 0; i < strToUpperCase.length / 2; i++) {
-        if(strToUpperCase[i] !== strToUpperCase[strToUpperCase.length - i - 1]) answer = 'NO';
+    const len = strToUpperCase.length
+    for(let i = 0; i < len / 2; i++) {
+        if(strToUpperCase[i] !== strToUpperCase[len - i - 1]) answer = 'NO';
     }
-
     return answer;
 }
 
 function solution2(str) {
     let answer = 'YES';
-    str = str.toUpperCase().replace(/[^a-zA-Z]/g,""); 
+    str = str.toUpperCase().replace(/[^A-Z]/g,""); // 대문자 통일 후 정규식 적용
     const reversedStr = str.split('').reverse().join('');
     if (str !== reversedStr) answer = 'NO'
     return answer;
