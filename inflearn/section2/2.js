@@ -10,7 +10,7 @@
  * 입력 예제 : 130 135 148 140 145 150 150 153 >>> 5
  */
 
-// 1차 >>> 문제 잘못 이해..
+// 첫 번째 >>> 문제 잘못 이해..
 function solution(heightsOfStudents) {
     let answer = 0;
 
@@ -23,7 +23,7 @@ function solution(heightsOfStudents) {
 
 console.log(solution([130, 135, 148, 140, 145, 150, 150, 153]));
 
-// 2차
+// 두 번째
 function solution2(heightsOfStudents) {
     let answer = 1; // 첫 번째 학생은 무조건 보임
     let tallest = heightsOfStudents[0];  

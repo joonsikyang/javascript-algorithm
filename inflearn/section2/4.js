@@ -15,7 +15,7 @@
  * 입력 예제 : 10, [1, 0, 1, 1, 1, 0, 0, 1, 1, 0] >>> 10
  */
 
-// 1차 >> 보완 필요
+// 첫 번째 >> 보완 필요
 function solution(results) {
     let total = 0;
     let inArow = 0;
@@ -35,7 +35,7 @@ function solution(results) {
     return total;
 }
 
-// 2차
+// 두 번째
 function solution2(results) {
     let totalScore = 0;
     let inArow = 0;

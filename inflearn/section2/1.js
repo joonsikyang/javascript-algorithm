@@ -7,7 +7,7 @@
  * 입력 예제 : 6, [7 3 9 5 6 12] >>> [7, 9, 6, 12]
  */
 
-// 1차
+// 첫 번째,
 // 첫 줄에 자연수 N 주어지는 이유..? >>> 필요 없다고 함..(C, Java 같은 경우는 필요함)
 function solution(num, numbers) {
     let answer = [];
@@ -20,11 +20,11 @@ function solution(num, numbers) {
     return answer;
 }
 
-// 2차
+// 두 번째,
 function solution2(numbers) {
     let answer = []; // return 하는 데이터 타입에 따라 초기값 할당
     answer.push(numbers[0]); // 첫 번째 요소는 무조건 포함
-    
+
     for (let i = 1; i < numbers.length; i++) {
         if(numbers[i] > numbers[i -1]) answer.push(numbers[i]);
     }

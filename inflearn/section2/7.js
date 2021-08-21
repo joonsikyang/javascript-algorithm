@@ -51,9 +51,9 @@ function solution2(arr) {
             for(let k = 0; k < 4; k++){
                 let nx = i + dx[k]; // 가고자 하는 행 좌표
                 let ny = j + dy[k]; // 가고자 하는 열 좌표
-                if(nx >= 0 && nx < n && ny >= 0 && ny < n && arr[nx][ny] >= arr[i][j]){
+                if(nx >= 0 && nx < n && ny >= 0 && ny < n && arr[nx][ny] >= arr[i][j]){ // 예외 케이스 처리 확인하기..
                     flag = 0;
-                    break;
+                    break; // 봉우리가 아닌 것이 판별 되면 for문 중단
                 }
             }
             if(flag) answer++;

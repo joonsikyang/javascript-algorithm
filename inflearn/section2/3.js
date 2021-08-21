@@ -17,15 +17,15 @@ function solution(data) {
     const result = []; // 강의 자료와는 다르게 출력 데이터 타입을 배열로 설정함
 
     for(let i in playerA) { // A, B 비교해야 하는 index는 동일. 기준을 잡으면 됨.
-        if(playerA[i] === playerB[i]) { // 비기는 경우
+        if(playerA[i] === playerB[i]) {
             result.push("D");
-        } else if( // A가 이기는 경우
+        } else if(
             playerA[i] === 1 && playerB[i] === 3 ||
             playerA[i] === 2 && playerB[i] === 1 ||
             playerA[i] === 3 && playerB[i] === 2
         ) {
             result.push("A");
-        } else { // A가 지는 경우
+        } else {
             result.push("B");
         }
     }
@@ -35,7 +35,7 @@ function solution(data) {
 
 console.log(solution([[2, 3, 3, 1, 3], [1, 1, 2, 2, 3]]));
 
-// 문제 풀이 >> 별로..
+// 문제 풀이 >> 조금 이상하지 않나..?
 function solution2(a, b) {         
     let answer = "";
     

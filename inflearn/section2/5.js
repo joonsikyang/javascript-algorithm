@@ -10,6 +10,7 @@
  * 입력 예제 : [87, 89, 92, 100, 76] >>> [4, 3, 2, 1, 5]
  */
 
+// 첫 번째,
 function solution(arr) {
     let answer = []
     for(let i in arr) {
@@ -24,7 +25,7 @@ function solution(arr) {
 
 console.log(solution([89, 89, 92, 100, 76]));
 
-// 문제 풀이 >> 확인 필요
+// 문제 풀이
 function solution2(arr) {  
     let n = arr.length;
     let answer = Array.from({length: n}, () => 1); // 1차원 배열 1로 초기화. Array.from 학습 필요
