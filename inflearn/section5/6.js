@@ -13,6 +13,7 @@
  * 입력 예제 : BACBACCACCBDEDE >>> C
  */
 
+// 객체 활용
 function solution(votes){
     let result = {};
     for(let x of votes){
@@ -27,15 +28,19 @@ function solution(votes){
 
 console.log(solution("BACBACCACCBDEDE"));
 
-// 문제 풀이 >> 확인 필요
-function solution(s){  
+// 문제 풀이 >> Hash Map 활용
+function solution2(s){  
     let answer;
-    let sH = new Map();
-    for(let x of s){
+    let sH = new Map(); // key-value
+    for(let x of s) {
         if(sH.has(x)) sH.set(x, sH.get(x)+1);
         else sH.set(x, 1);
+        // sH.set(x, sH.has(x) ? sH.get(x)+1 : 1); 가독성 떨어지나..?
     }
-    let max = Number.MIN_SAFE_INTEGER;
+
+    console.log(sH); // Map(5) { 'B' => 3, 'A' => 3, 'C' => 5, 'D' => 2, 'E' => 2 }
+
+    let max = Number.MIN_SAFE_INTEGER; // 작은 숫자로 초기값 설정. (IE 지원 X)
     for(let [key, val] of sH){
         if(val > max){
             max = val;
@@ -44,3 +49,7 @@ function solution(s){
     }
     return answer;
 }
+
+console.log(solution2("BACBACCACCBDEDE"));
+
+b

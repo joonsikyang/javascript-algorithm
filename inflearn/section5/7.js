@@ -36,7 +36,7 @@ function solution(str1, str2){
     }
     for(let x of str2){
         if(!sH.has(x) || sH.get(x)==0) return "NO";
-        sH.set(x, sH.get(x)-1);
+        sH.set(x, sH.get(x)-1); // 1:1 매칭위해 상쇄
     }
     return answer;
 }
